@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/OpenGL_SDK/assimp/VS2026/cmake_install.cmake",
+		"C:/OpenGL_SDK/assimp/VS2026/contrib/zlib/cmake_install.cmake",
+		"C:/OpenGL_SDK/assimp/VS2026/code/cmake_install.cmake",
+		"C:/OpenGL_SDK/assimp/VS2026/test/cmake_install.cmake",
+		"C:/OpenGL_SDK/assimp/VS2026/test/headercheck/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

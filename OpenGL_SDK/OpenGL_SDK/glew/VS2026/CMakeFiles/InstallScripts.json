@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/OpenGL_SDK/glew/VS2026/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

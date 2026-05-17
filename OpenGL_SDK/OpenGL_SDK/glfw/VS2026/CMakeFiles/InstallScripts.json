@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/OpenGL_SDK/glfw/VS2026/cmake_install.cmake",
+		"C:/OpenGL_SDK/glfw/VS2026/src/cmake_install.cmake",
+		"C:/OpenGL_SDK/glfw/VS2026/examples/cmake_install.cmake",
+		"C:/OpenGL_SDK/glfw/VS2026/tests/cmake_install.cmake",
+		"C:/OpenGL_SDK/glfw/VS2026/docs/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

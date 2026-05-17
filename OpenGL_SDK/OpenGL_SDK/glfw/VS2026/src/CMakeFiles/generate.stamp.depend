@@ -1,0 +1,3 @@
+# CMake generation dependency list for this directory.
+C:/OpenGL_SDK/glfw/CMake/glfw3.pc.in
+C:/OpenGL_SDK/glfw/src/CMakeLists.txt

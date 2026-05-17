@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\OpenGL_SDK\glm\VS2026\CMakeFiles\6d194a0e3b5698ee2ec093bd49a9054f\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{86F3D6D5-1C48-348A-A006-C491E8E4F139}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

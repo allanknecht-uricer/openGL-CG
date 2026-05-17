@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Solution>
+	<Configurations>
+		<BuildType Name="Debug"/>
+		<BuildType Name="Release"/>
+		<BuildType Name="MinSizeRel"/>
+		<BuildType Name="RelWithDebInfo"/>
+		<Platform Name="x64"/>
+	</Configurations>
+	<Project Path="ALL_BUILD.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="7a775458-bb72-36cb-afd7-f7f8b4541294" DefaultStartup="true">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="glew.vcxproj"/>
+		<BuildDependency Project="glew_s.vcxproj"/>
+		<BuildDependency Project="glewinfo.vcxproj"/>
+		<BuildDependency Project="visualinfo.vcxproj"/>
+	</Project>
+	<Project Path="INSTALL.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="96f1fd04-8ceb-3c01-a108-b460f0f0df12">
+		<BuildDependency Project="ALL_BUILD.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<Build Solution="Debug|*" Project="false"/>
+		<Build Solution="Release|*" Project="false"/>
+		<Build Solution="MinSizeRel|*" Project="false"/>
+		<Build Solution="RelWithDebInfo|*" Project="false"/>
+	</Project>
+	<Project Path="ZERO_CHECK.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="625d00cf-c8d1-3cda-b8e9-60b060c4381b"/>
+	<Project Path="glew.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="b111aee5-e7f5-3afe-b59e-f80bff36cf0a">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="glew_s.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="31d49c31-2f0b-3b92-9635-47b70f69e4dd">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="glewinfo.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="edb5ce31-1ad8-3a8f-838c-79dadc318795">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="glew.vcxproj"/>
+	</Project>
+	<Project Path="uninstall.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="d8375e8a-837e-3c8d-aa3e-873753448c91">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<Build Solution="Debug|*" Project="false"/>
+		<Build Solution="Release|*" Project="false"/>
+		<Build Solution="MinSizeRel|*" Project="false"/>
+		<Build Solution="RelWithDebInfo|*" Project="false"/>
+	</Project>
+	<Project Path="visualinfo.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="ef02e4b0-d9d6-3c58-8551-8d32ea2aa61b">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="glew.vcxproj"/>
+	</Project>
+</Solution>

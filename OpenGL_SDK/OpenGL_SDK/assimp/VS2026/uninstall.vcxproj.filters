@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\OpenGL_SDK\assimp\VS2026\CMakeFiles\a69912b3035ef75b99b7ee8dc12a9fd9\uninstall.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\OpenGL_SDK\assimp\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\OpenGL_SDK\assimp\VS2026\CMakeFiles\uninstall" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{46FDA5FB-E9D6-363B-BD0B-6F1149C3EDFA}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,13 @@
+C:/OpenGL_SDK/assimp/VS2026/CMakeFiles/uninstall.dir
+C:/OpenGL_SDK/assimp/VS2026/CMakeFiles/UpdateAssimpLibsDebugSymbolsAndDLLs.dir
+C:/OpenGL_SDK/assimp/VS2026/CMakeFiles/INSTALL.dir
+C:/OpenGL_SDK/assimp/VS2026/CMakeFiles/ALL_BUILD.dir
+C:/OpenGL_SDK/assimp/VS2026/CMakeFiles/ZERO_CHECK.dir
+C:/OpenGL_SDK/assimp/VS2026/contrib/zlib/CMakeFiles/zlibstatic.dir
+C:/OpenGL_SDK/assimp/VS2026/contrib/zlib/CMakeFiles/INSTALL.dir
+C:/OpenGL_SDK/assimp/VS2026/contrib/zlib/CMakeFiles/ALL_BUILD.dir
+C:/OpenGL_SDK/assimp/VS2026/code/CMakeFiles/assimp.dir
+C:/OpenGL_SDK/assimp/VS2026/code/CMakeFiles/INSTALL.dir
+C:/OpenGL_SDK/assimp/VS2026/test/CMakeFiles/unit.dir
+C:/OpenGL_SDK/assimp/VS2026/test/CMakeFiles/INSTALL.dir
+C:/OpenGL_SDK/assimp/VS2026/test/headercheck/CMakeFiles/INSTALL.dir
