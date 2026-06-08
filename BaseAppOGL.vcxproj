@@ -33,11 +33,11 @@
     <ClInclude Include="Engine\InputManager.h" />
     <ClInclude Include="Engine\SceneManager.h" />
     <ClInclude Include="Engine\stb_image.h" />
-    <ClInclude Include="Scenes\Scene0\Scene0.h" />
-    <ClInclude Include="Scenes\Scene1\Scene1.h" />
-    <ClInclude Include="Scenes\Scene2\Scene2.h" />
-    <ClInclude Include="Scenes\Scene3\Scene3.h" />
-    <ClInclude Include="Scenes\Scene4\Scene4.h" />
+    <ClInclude Include="Scenes\tde\Scene1\Scene1.h" />
+    <ClInclude Include="Scenes\tde\Scene2\Scene2.h" />
+    <ClInclude Include="Scenes\tde\Scene3\Scene3.h" />
+    <ClInclude Include="Scenes\tde\Scene4\Scene4.h" />
+    <ClInclude Include="Scenes\FinalProject\FinalProject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\CGridAxis.cpp" />
@@ -56,11 +56,11 @@
     <ClCompile Include="Engine\imgui\imgui_widgets.cpp" />
     <ClCompile Include="Engine\main.cpp" />
     <ClCompile Include="Engine\SceneManager.cpp" />
-    <ClCompile Include="Scenes\Scene0\Scene0.cpp" />
-    <ClCompile Include="Scenes\Scene1\Scene1.cpp" />
-    <ClCompile Include="Scenes\Scene2\Scene2.cpp" />
-    <ClCompile Include="Scenes\Scene3\Scene3.cpp" />
-    <ClCompile Include="Scenes\Scene4\Scene4.cpp" />
+    <ClCompile Include="Scenes\tde\Scene1\Scene1.cpp" />
+    <ClCompile Include="Scenes\tde\Scene2\Scene2.cpp" />
+    <ClCompile Include="Scenes\tde\Scene3\Scene3.cpp" />
+    <ClCompile Include="Scenes\tde\Scene4\Scene4.cpp" />
+    <ClCompile Include="Scenes\FinalProject\FinalProject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scenes\Common\axis.frag" />
@@ -69,22 +69,14 @@
     <None Include="Scenes\Common\grid.vert" />
     <None Include="Scenes\Common\Text2D.frag" />
     <None Include="Scenes\Common\Text2D.vert" />
-    <None Include="Scenes\Scene0\Solid.frag" />
-    <None Include="Scenes\Scene0\Solid.vert" />
-    <None Include="Scenes\Scene1\Textured.frag" />
-    <None Include="Scenes\Scene1\Textured.vert" />
-    <None Include="Scenes\Scene2\Decal.frag" />
-    <None Include="Scenes\Scene2\Decal.vert" />
-    <None Include="Scenes\Scene2\LightMap.frag" />
-    <None Include="Scenes\Scene2\LightMap.vert" />
-    <None Include="Scenes\Scene2\MTMask.frag" />
-    <None Include="Scenes\Scene2\MTMask.vert" />
-    <None Include="Scenes\Scene2\River.frag" />
-    <None Include="Scenes\Scene2\River.vert" />
-    <None Include="Scenes\Scene3\Textured.frag" />
-    <None Include="Scenes\Scene3\Textured.vert" />
-    <None Include="Scenes\Scene4\exerc3.frag" />
-    <None Include="Scenes\Scene4\exerc3.vert" />
+    <None Include="Scenes\Common\Solid.frag" />
+    <None Include="Scenes\Common\Solid.vert" />
+    <None Include="Scenes\tde\Scene1\Textured.frag" />
+    <None Include="Scenes\tde\Scene1\Textured.vert" />
+    <None Include="Scenes\tde\Scene2\exerc3.frag" />
+    <None Include="Scenes\tde\Scene2\exerc3.vert" />
+    <None Include="Scenes\tde\Scene3\Scene3.frag" />
+    <None Include="Scenes\tde\Scene3\Scene3.vert" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

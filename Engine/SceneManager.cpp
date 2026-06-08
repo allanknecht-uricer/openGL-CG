@@ -12,8 +12,8 @@ CSceneManager::CSceneManager()
 	// Habilita VSync por padrão
 	bVsyncEnabled = true;
 
-	// Define a cena inicial
-	uiCurrentScene = 2;
+	// Define a cena inicial (FinalProject)
+	uiCurrentScene = 0;
 	ChangeScene(uiCurrentScene);
 }
 
@@ -46,10 +46,6 @@ void CSceneManager::ProcessSceneInput(GLFWwindow* window, float deltaTime)
 	// Toggle cursor mode with TAB or VSync
 	if (input.IsKeyJustPressed(GLFW_KEY_V))
 	{
-		//static bool cursorDisabled = true;
-		//cursorDisabled = !cursorDisabled;
-		//input.SetCursorMode(cursorDisabled ? GLFW_CURSOR_DISABLED : GLFW_CURSOR_NORMAL);
-
 		bVsyncEnabled = !bVsyncEnabled;
 		glfwSwapInterval(bVsyncEnabled);
 
@@ -80,8 +76,6 @@ void CSceneManager::ProcessSceneInput(GLFWwindow* window, float deltaTime)
 	if (input.IsKeyJustPressed(GLFW_KEY_4))
 		ChangeScene(4);
 
-
-
 	// Processa input da cena atual
 	Scene->ProcessSceneInput(window, deltaTime);
 }
@@ -103,12 +97,11 @@ void CSceneManager::ChangeScene(unsigned int _uiCurrentScene)
 	switch (uiCurrentScene)
 	{
 	case 0:
-		this->Scene = new Scene0();
+		this->Scene = new FinalProject();
 		break;
 
 	case 1:
 		this->Scene = new Scene1();
-
 		break;
 
 	case 2:
@@ -122,12 +115,5 @@ void CSceneManager::ChangeScene(unsigned int _uiCurrentScene)
 	case 4:
 		this->Scene = new Scene4();
 		break;
-
-
-
-
-
-
 	}
 }
-

@@ -90,7 +90,7 @@ int main()
 	ImGui_ImplOpenGL3_Init();
 
 
-	// Start with Scene0
+	// Start with FinalProject scene
 	CSceneManager* pSceneManager = new CSceneManager();
 
 	// Render loop
