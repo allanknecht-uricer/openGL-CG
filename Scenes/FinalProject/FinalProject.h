@@ -5,6 +5,7 @@
 #include "Engine/CShader.h"
 #include "Engine/CTimer.h"
 #include "Engine/CText.h"
+#include "Engine/CLoadAssets.h"
 
 class FinalProject : public CSceneBase
 {
@@ -21,4 +22,6 @@ private:
 	CShader* pShader;
 	CTimer* pTimer;
 	CText* pText;
+	CLoadAssets* pModel;
+	CLoadAssets* pDetalheParede;
 };

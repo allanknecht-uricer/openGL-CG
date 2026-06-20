@@ -191,6 +191,18 @@
     <None Include="Scenes\tde\Scene3\Scene3.vert">
       <Filter>Scenes\tde\Scene3</Filter>
     </None>
+    <None Include="Scenes\FinalProject\Assets.frag">
+      <Filter>Scenes\FinalProject</Filter>
+    </None>
+    <None Include="Scenes\FinalProject\Assets.vert">
+      <Filter>Scenes\FinalProject</Filter>
+    </None>
+    <None Include="Scenes\FinalProject\project.obj">
+      <Filter>Scenes\FinalProject</Filter>
+    </None>
+    <None Include="Scenes\FinalProject\project.mtl">
+      <Filter>Scenes\FinalProject</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">

@@ -21,7 +21,7 @@ struct Vertex
 
 struct Texture 
 {
-    unsigned int id;
+    unsigned int id = 0;
     std::string type;
     std::string path;
 };
@@ -32,9 +32,12 @@ public:
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
     std::vector<Texture> textures;
+    glm::vec4 diffuseColor;
+    bool usePolygonOffset;
     unsigned int VAO;
 
-    Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures);
+    Mesh(std::vector<Vertex> inVertices, std::vector<unsigned int> inIndices,
+        std::vector<Texture> inTextures, glm::vec4 inDiffuseColor, bool inUsePolygonOffset);
     void Draw(unsigned int shaderProgram);
 
 private:
@@ -45,7 +48,7 @@ private:
 class CLoadAssets 
 {
 public:
-    CLoadAssets(const std::string& path);
+    CLoadAssets(const std::string& path, const std::vector<std::string>& skipMeshNames = {});
     ~CLoadAssets();
 
     void Draw(unsigned int shaderProgram);
@@ -53,6 +56,7 @@ public:
 private:
     std::vector<Mesh> meshes;
     std::string directory;
+    std::vector<std::string> skipMeshNames;
 
     void loadModel(const std::string& path);
     void processNode(aiNode* node, const aiScene* scene);

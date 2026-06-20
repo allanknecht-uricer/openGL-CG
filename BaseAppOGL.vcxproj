@@ -42,6 +42,7 @@
   <ItemGroup>
     <ClCompile Include="Engine\CGridAxis.cpp" />
     <ClCompile Include="Engine\CLoadAssets.cpp" />
+    <ClCompile Include="Engine\stb_image_impl.cpp" />
     <ClCompile Include="Engine\CPrimitives.cpp" />
     <ClCompile Include="Engine\CSceneBase.cpp" />
     <ClCompile Include="Engine\CText.cpp" />
@@ -77,6 +78,10 @@
     <None Include="Scenes\tde\Scene2\exerc3.vert" />
     <None Include="Scenes\tde\Scene3\Scene3.frag" />
     <None Include="Scenes\tde\Scene3\Scene3.vert" />
+    <None Include="Scenes\FinalProject\Assets.frag" />
+    <None Include="Scenes\FinalProject\Assets.vert" />
+    <None Include="Scenes\FinalProject\project.obj" />
+    <None Include="Scenes\FinalProject\project.mtl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
