@@ -42,7 +42,6 @@
   <ItemGroup>
     <ClCompile Include="Engine\CGridAxis.cpp" />
     <ClCompile Include="Engine\CLoadAssets.cpp" />
-    <ClCompile Include="Engine\stb_image_impl.cpp" />
     <ClCompile Include="Engine\CPrimitives.cpp" />
     <ClCompile Include="Engine\CSceneBase.cpp" />
     <ClCompile Include="Engine\CText.cpp" />

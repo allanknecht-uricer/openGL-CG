@@ -1,10 +1,11 @@
 #include "FinalProject.h"
+#include <GLFW/glfw3.h>
 
 FinalProject::FinalProject()
 	: pModel(nullptr)
 	, pDetalheParede(nullptr)
+	, pTextures(nullptr)
 {
-	// Quarto exportado do 3ds Max em polegadas (~200 unidades) — camera afastada como Scene5
 	pCamera = new CCamera(glm::vec3(80.0f, 100.0f, 120.0f));
 	pCamera->MovementSpeed = 100.0f;
 
@@ -22,6 +23,9 @@ FinalProject::FinalProject()
 
 	pGridAxis = new CGridAxis(50.0f);
 
+	pTextures = new CTextures();
+	pTextures->LoadTextureLinear(0, "Scenes/FinalProject/textures/wall_brick.png", false);
+
 	pModel = new CLoadAssets("Scenes/FinalProject/project.obj", { "detalhe_parede" });
 	pDetalheParede = new CLoadAssets("Scenes/FinalProject/detalhe_parede_fixed.obj");
 }
@@ -38,6 +42,12 @@ FinalProject::~FinalProject()
 	{
 		delete pModel;
 		pModel = NULL;
+	}
+
+	if (pTextures)
+	{
+		delete pTextures;
+		pTextures = NULL;
 	}
 
 	if (pCamera)
@@ -96,6 +106,12 @@ void FinalProject::DrawScene()
 		pShader->SetMat4("projection", projection);
 		pShader->SetMat4("view", view);
 		pShader->SetMat4("model", model);
+		pShader->SetFloat("uTime", static_cast<float>(glfwGetTime()));
+
+		glActiveTexture(GL_TEXTURE1);
+		pTextures->ApplyTexture(0);
+		pShader->SetInt("uBrickMap", 1);
+
 		pModel->Draw(pShader->GetProgram("Assets"));
 
 		if (pDetalheParede)
@@ -111,7 +127,7 @@ void FinalProject::DrawScene()
 	pShader->SetVec3("textColor", 1.0f, 1.0f, 1.0f);
 
 	pText->RenderText("FinalProject — Quarto Gamer (tecla 0)", 5.0f, 120.0f, 0.35f);
-	pText->RenderText("WASD + mouse | Shift = rapido | igual Scene5 (Assets + OBJ)", 5.0f, 100.0f, 0.28f);
+	pText->RenderText("WASD + mouse | Shift = rapido", 5.0f, 100.0f, 0.28f);
 	pText->RenderText(std::format("CamPosition\tx: {0:.2f} \t y: {1:.2f} \t z: {2:.2f}", pCamera->Position.x, pCamera->Position.y, pCamera->Position.z), 5.0f, 80.0f, 0.28f);
 	pText->RenderText(std::format("FPS: {0:.0f}\tDeltatime: {1:.2f}ms", pTimer->GetFPS(), pTimer->GetDeltaTime()), 5.0f, 10.0f, 0.28f);
 	glEnable(GL_DEPTH_TEST);

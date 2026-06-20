@@ -33,11 +33,10 @@ public:
     std::vector<unsigned int> indices;
     std::vector<Texture> textures;
     glm::vec4 diffuseColor;
-    bool usePolygonOffset;
     unsigned int VAO;
 
-    Mesh(std::vector<Vertex> inVertices, std::vector<unsigned int> inIndices,
-        std::vector<Texture> inTextures, glm::vec4 inDiffuseColor, bool inUsePolygonOffset);
+    Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices,
+        std::vector<Texture> textures, glm::vec4 diffuseColor = glm::vec4(0.8f, 0.8f, 0.8f, 1.0f));
     void Draw(unsigned int shaderProgram);
 
 private:
@@ -64,5 +63,4 @@ private:
     std::vector<Texture> loadMaterialTextures(aiMaterial* mat, aiTextureType type, std::string typeName);
     unsigned int TextureFromFile(const char* path, const std::string& directory);
 };
-
 
