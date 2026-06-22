@@ -1,10 +1,12 @@
 #include "FinalProject.h"
 #include <GLFW/glfw3.h>
+#include <algorithm>
+#include <glm/gtc/type_ptr.hpp>
 
 FinalProject::FinalProject()
 	: pModel(nullptr)
 	, pDetalheParede(nullptr)
-	, pTextures(nullptr)
+	, pBrickPlanes(nullptr)
 {
 	pCamera = new CCamera(glm::vec3(80.0f, 100.0f, 120.0f));
 	pCamera->MovementSpeed = 100.0f;
@@ -23,15 +25,19 @@ FinalProject::FinalProject()
 
 	pGridAxis = new CGridAxis(50.0f);
 
-	pTextures = new CTextures();
-	pTextures->LoadTextureLinear(0, "Scenes/FinalProject/textures/wall_brick.png", false);
-
-	pModel = new CLoadAssets("Scenes/FinalProject/project.obj", { "detalhe_parede" });
-	pDetalheParede = new CLoadAssets("Scenes/FinalProject/detalhe_parede_fixed.obj");
+	pModel = new CLoadAssets("Scenes/FinalProject/models/project.obj", { "detalhe_parede" });
+	pDetalheParede = new CLoadAssets("Scenes/FinalProject/models/detalhe_parede_fixed.obj");
+	pBrickPlanes = new CLoadAssets("Scenes/FinalProject/models/brick_planes.obj");
 }
 
 FinalProject::~FinalProject()
 {
+	if (pBrickPlanes)
+	{
+		delete pBrickPlanes;
+		pBrickPlanes = NULL;
+	}
+
 	if (pDetalheParede)
 	{
 		delete pDetalheParede;
@@ -42,12 +48,6 @@ FinalProject::~FinalProject()
 	{
 		delete pModel;
 		pModel = NULL;
-	}
-
-	if (pTextures)
-	{
-		delete pTextures;
-		pTextures = NULL;
 	}
 
 	if (pCamera)
@@ -107,15 +107,28 @@ void FinalProject::DrawScene()
 		pShader->SetMat4("view", view);
 		pShader->SetMat4("model", model);
 		pShader->SetFloat("uTime", static_cast<float>(glfwGetTime()));
+		pShader->SetVec3("uViewPos", pCamera->Position);
+		pShader->SetVec3("uFillLightPos", glm::vec3(5.0f, 175.0f, -5.0f));
+		pShader->SetFloat("uFillLightStrength", 0.65f);
 
-		glActiveTexture(GL_TEXTURE1);
-		pTextures->ApplyTexture(0);
-		pShader->SetInt("uBrickMap", 1);
+		const std::vector<glm::vec3>& ngonLights = pModel->GetNgonLightPositions();
+		const int ngonLightCount = std::min(static_cast<int>(ngonLights.size()), 8);
+		pShader->SetInt("uNgonLightCount", ngonLightCount);
+		if (ngonLightCount > 0)
+		{
+			const GLuint assetsProgram = pShader->GetProgram("Assets");
+			const GLint lightPosLoc = glGetUniformLocation(assetsProgram, "uNgonLightPos");
+			if (lightPosLoc >= 0)
+				glUniform3fv(lightPosLoc, ngonLightCount, glm::value_ptr(ngonLights[0]));
+		}
 
 		pModel->Draw(pShader->GetProgram("Assets"));
 
 		if (pDetalheParede)
 			pDetalheParede->Draw(pShader->GetProgram("Assets"));
+
+		if (pBrickPlanes)
+			pBrickPlanes->Draw(pShader->GetProgram("Assets"));
 	}
 
 	glDisable(GL_DEPTH_TEST);

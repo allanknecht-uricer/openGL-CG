@@ -197,11 +197,23 @@
     <None Include="Scenes\FinalProject\Assets.vert">
       <Filter>Scenes\FinalProject</Filter>
     </None>
-    <None Include="Scenes\FinalProject\project.obj">
-      <Filter>Scenes\FinalProject</Filter>
+    <None Include="Scenes\FinalProject\models\project.obj">
+      <Filter>Scenes\FinalProject\models</Filter>
     </None>
-    <None Include="Scenes\FinalProject\project.mtl">
-      <Filter>Scenes\FinalProject</Filter>
+    <None Include="Scenes\FinalProject\models\project.mtl">
+      <Filter>Scenes\FinalProject\models</Filter>
+    </None>
+    <None Include="Scenes\FinalProject\models\brick_planes.obj">
+      <Filter>Scenes\FinalProject\models</Filter>
+    </None>
+    <None Include="Scenes\FinalProject\models\brick_planes.mtl">
+      <Filter>Scenes\FinalProject\models</Filter>
+    </None>
+    <None Include="Scenes\FinalProject\models\detalhe_parede_fixed.obj">
+      <Filter>Scenes\FinalProject\models</Filter>
+    </None>
+    <None Include="Scenes\FinalProject\models\detalhe_parede.mtl">
+      <Filter>Scenes\FinalProject\models</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -219,6 +231,9 @@
     </Filter>
     <Filter Include="Scenes\FinalProject">
       <UniqueIdentifier>{e4f5a6b7-c8d9-4012-d345-6789abcdef01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes\FinalProject\models">
+      <UniqueIdentifier>{f7a8b9c0-d1e2-4f3a-8b5c-6d7e8f9a0b1c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Scenes\tde">
       <UniqueIdentifier>{a1b2c3d4-e5f6-7890-abcd-ef1234567890}</UniqueIdentifier>

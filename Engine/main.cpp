@@ -1,4 +1,50 @@
 #include "SceneManager.h"
+#include <filesystem>
+#include <iostream>
+
+#ifdef _WIN32
+#define WIN32_LEAN_AND_MEAN
+#include <Windows.h>
+#endif
+
+namespace fs = std::filesystem;
+
+static bool SetContentRoot()
+{
+    const fs::path marker = fs::path("Scenes") / "FinalProject" / "models" / "project.obj";
+
+    const auto tryRoot = [&marker](const fs::path& dir) -> bool
+    {
+        if (!fs::exists(dir / marker))
+            return false;
+        fs::current_path(dir);
+        std::cout << "Content root: " << fs::absolute(dir).string() << std::endl;
+        return true;
+    };
+
+    if (tryRoot(fs::current_path()))
+        return true;
+
+#ifdef _WIN32
+    char modulePath[MAX_PATH];
+    if (GetModuleFileNameA(nullptr, modulePath, MAX_PATH) != 0)
+    {
+        fs::path dir = fs::path(modulePath).parent_path();
+        for (int depth = 0; depth < 8; ++depth)
+        {
+            if (tryRoot(dir))
+                return true;
+            if (!dir.has_parent_path())
+                break;
+            dir = dir.parent_path();
+        }
+    }
+#endif
+
+    std::cerr << "WARNING: could not locate " << marker.string()
+        << " — run the exe from the project folder or use F5 in Visual Studio." << std::endl;
+    return false;
+}
 
 // Timing
 float deltaTime = 0.0f;
@@ -12,6 +58,8 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 
 int main()
 {
+	SetContentRoot();
+
 	// Initialize GLFW
 	if (!glfwInit())
 	{

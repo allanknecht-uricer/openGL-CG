@@ -79,8 +79,12 @@
     <None Include="Scenes\tde\Scene3\Scene3.vert" />
     <None Include="Scenes\FinalProject\Assets.frag" />
     <None Include="Scenes\FinalProject\Assets.vert" />
-    <None Include="Scenes\FinalProject\project.obj" />
-    <None Include="Scenes\FinalProject\project.mtl" />
+    <None Include="Scenes\FinalProject\models\project.obj" />
+    <None Include="Scenes\FinalProject\models\project.mtl" />
+    <None Include="Scenes\FinalProject\models\brick_planes.obj" />
+    <None Include="Scenes\FinalProject\models\brick_planes.mtl" />
+    <None Include="Scenes\FinalProject\models\detalhe_parede_fixed.obj" />
+    <None Include="Scenes\FinalProject\models\detalhe_parede.mtl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -123,6 +127,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin-int\$(Configuration)\</IntDir>
+    <LocalDebuggerWorkingDirectory>$(ProjectDir)</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>

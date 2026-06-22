@@ -1,0 +1,79 @@
+# Brick cutaway planes
+
+newmtl wire_032058127
+	Ns 32
+	d 1
+	Tr 0
+	Tf 1 1 1
+	illum 2
+	Ka 0.1255 0.2275 0.4980
+	Kd 0.1255 0.2275 0.4980
+	Ks 0.3500 0.3500 0.3500
+	map_Kd ../textures/wall_brick.png
+
+newmtl wire_050124020
+	Ns 32
+	d 1
+	Tr 0
+	Tf 1 1 1
+	illum 2
+	Ka 0.1961 0.4863 0.0784
+	Kd 0.1961 0.4863 0.0784
+	Ks 0.3500 0.3500 0.3500
+	map_Kd ../textures/wall_brick.png
+
+newmtl wire_210187158
+	Ns 32
+	d 1
+	Tr 0
+	Tf 1 1 1
+	illum 2
+	Ka 0.8235 0.7333 0.6196
+	Kd 0.8235 0.7333 0.6196
+	Ks 0.3500 0.3500 0.3500
+	map_Kd ../textures/wall_brick.png
+
+newmtl wire_178222161
+	Ns 32
+	d 1
+	Tr 0
+	Tf 1 1 1
+	illum 2
+	Ka 0.6980 0.8706 0.6314
+	Kd 0.6980 0.8706 0.6314
+	Ks 0.3500 0.3500 0.3500
+	map_Kd ../textures/wall_brick.png
+
+newmtl wire_180222188
+	Ns 32
+	d 1
+	Tr 0
+	Tf 1 1 1
+	illum 2
+	Ka 0.7059 0.8706 0.7373
+	Kd 0.7059 0.8706 0.7373
+	Ks 0.3500 0.3500 0.3500
+	map_Kd ../textures/wall_brick.png
+
+
+newmtl wall_cement
+	Kd 1.0000 1.0000 1.0000
+	map_Kd ../textures/wall_cement.jpg
+
+newmtl floor_wood_baked
+	Kd 1.0000 1.0000 1.0000
+	map_Kd ../textures/floor.png
+
+newmtl sofa_fabric
+	Kd 0.5500 0.5500 0.5800
+	map_Kd ../textures/plastic_dark.png
+
+newmtl door_paint
+	Kd 1.0000 1.0000 1.0000
+
+newmtl tv_shell
+	Kd 1.0000 1.0000 1.0000
+
+newmtl wall_brick
+	Kd 1.0000 1.0000 1.0000
+	map_Kd ../textures/wall_brick.png
