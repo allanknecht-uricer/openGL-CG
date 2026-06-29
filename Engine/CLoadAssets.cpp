@@ -57,13 +57,7 @@ void Mesh::setupMesh()
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, TexCoords));
 
     glEnableVertexAttribArray(3);
-    glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, Tangent));
-
-    glEnableVertexAttribArray(4);
-    glVertexAttribPointer(4, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, Bitangent));
-
-    glEnableVertexAttribArray(5);
-    glVertexAttribPointer(5, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, Color));
+    glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, Color));
 
     glBindVertexArray(0);
 }
@@ -145,7 +139,7 @@ void CLoadAssets::loadModel(const std::string& path)
 {
     Assimp::Importer importer;
     const aiScene* scene = importer.ReadFile(path,
-        aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_CalcTangentSpace);
+        aiProcess_Triangulate | aiProcess_FlipUVs);
 
     if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) 
     {
@@ -213,17 +207,6 @@ Mesh CLoadAssets::processMesh(aiMesh* mesh, const aiScene* scene)
         else 
             vertex.TexCoords = glm::vec2(0.0f, 0.0f);
 
-        if (mesh->HasTangentsAndBitangents())
-        {
-            vertex.Tangent = glm::vec3(mesh->mTangents[i].x, mesh->mTangents[i].y, mesh->mTangents[i].z);
-            vertex.Bitangent = glm::vec3(mesh->mBitangents[i].x, mesh->mBitangents[i].y, mesh->mBitangents[i].z);
-        }
-        else
-        {
-            vertex.Tangent = glm::vec3(1.0f, 0.0f, 0.0f);
-            vertex.Bitangent = glm::vec3(0.0f, 0.0f, 1.0f);
-        }
-
         if (mesh->HasVertexColors(0))
         {
             vertex.Color = glm::vec3(
@@ -265,11 +248,6 @@ Mesh CLoadAssets::processMesh(aiMesh* mesh, const aiScene* scene)
         if (emissiveMaps.empty())
             emissiveMaps = loadMaterialTextures(material, aiTextureType_EMISSION_COLOR, "uEmissiveMap");
         textures.insert(textures.end(), emissiveMaps.begin(), emissiveMaps.end());
-
-        auto normalMaps = loadMaterialTextures(material, aiTextureType_NORMALS, "uNormalMap");
-        textures.insert(textures.end(), normalMaps.begin(), normalMaps.end());
-        auto heightMaps = loadMaterialTextures(material, aiTextureType_HEIGHT, "uHeightMap");
-        textures.insert(textures.end(), heightMaps.begin(), heightMaps.end());
     }
 
     const std::string meshName = mesh->mName.C_Str();

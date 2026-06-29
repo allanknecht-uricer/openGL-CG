@@ -18,7 +18,6 @@ FinalProject::FinalProject()
 	pText->InitTextManager();
 
 	pShader = new CShader();
-	pShader->LoadShader("Grid", "Scenes/Common/grid.vert", "Scenes/Common/grid.frag");
 	pShader->LoadShader("Axis", "Scenes/Common/axis.vert", "Scenes/Common/axis.frag");
 	pShader->LoadShader("Text2D", "Scenes/Common/Text2D.vert", "Scenes/Common/Text2D.frag");
 	pShader->LoadShader("Assets", "Scenes/FinalProject/Assets.vert", "Scenes/FinalProject/Assets.frag");
@@ -107,17 +106,17 @@ void FinalProject::DrawScene()
 		pShader->SetMat4("view", view);
 		pShader->SetMat4("model", model);
 		pShader->SetFloat("uTime", static_cast<float>(glfwGetTime()));
-		pShader->SetVec3("uViewPos", pCamera->Position);
-		pShader->SetVec3("uFillLightPos", glm::vec3(5.0f, 175.0f, -5.0f));
-		pShader->SetFloat("uFillLightStrength", 0.65f);
+		pShader->SetVec3("uViewPos", pCamera->Position);  // posição da camera
+		pShader->SetVec3("uFillLightPos", glm::vec3(5.0f, 175.0f, -5.0f));  // posição da luz de preenchimento para o ambiente
+		pShader->SetFloat("uFillLightStrength", 0.65f);  // intensidade da luz
 
-		const std::vector<glm::vec3>& ngonLights = pModel->GetNgonLightPositions();
-		const int ngonLightCount = std::min(static_cast<int>(ngonLights.size()), 8);
+		const std::vector<glm::vec3>& ngonLights = pModel->GetNgonLightPositions(); // esse bloco abaixo pega a posição das luzes de ngon e manda para o shader
+		const int ngonLightCount = std::min(static_cast<int>(ngonLights.size()), 8); // quantidade de luzes de ngon
 		pShader->SetInt("uNgonLightCount", ngonLightCount);
 		if (ngonLightCount > 0)
 		{
 			const GLuint assetsProgram = pShader->GetProgram("Assets");
-			const GLint lightPosLoc = glGetUniformLocation(assetsProgram, "uNgonLightPos");
+			const GLint lightPosLoc = glGetUniformLocation(assetsProgram, "uNgonLightPos"); // localização da luz de ngon no shader
 			if (lightPosLoc >= 0)
 				glUniform3fv(lightPosLoc, ngonLightCount, glm::value_ptr(ngonLights[0]));
 		}
